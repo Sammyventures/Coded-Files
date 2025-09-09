@@ -42,6 +42,12 @@
     gap: 20px;
    
 }
+.terms a{
+    color: gold; 
+    text-decoration: underline; 
+    padding-left: 65px; 
+    text-decoration-color: orange
+}
 .Box2{
     width: 65%;
     height: 37vh;

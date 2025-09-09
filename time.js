@@ -14,52 +14,64 @@ updateClock();
 // Update every second
 setInterval(updateClock, 1000);
 
-// Songs playlist (your real filenames)
-const songs = [
-  "songs/Wizard-Chan-Spirit.mp3",
-  "songs/Sia_-Unstoppable_CeeNaija.com.mp3",
-  "songs/Kunmie-Ft-Simi-and-Mabel-Arike-(TrendyBeatz.com).mp3"
-];
+document.addEventListener("DOMContentLoaded", () => {
+  // Songs playlist (your real filenames)
+  const songs = [
+    "songs/Wizard-Chan-Spirit.mp3",
+    "songs/Sia_-Unstoppable_CeeNaija.com.mp3",
+    "songs/Kunmie-Ft-Simi-and-Mabel-Arike-(TrendyBeatz.com).mp3"
+  ];
 
-let currentSong = 0;
-const player = document.getElementById("musicPlayer");
-const playPauseBtn = document.getElementById("playPauseBtn");
-const nextBtn = document.getElementById("nextBtn");
-const prevBtn = document.getElementById("prevBtn");
+  let currentSong = 0;
+  const player = document.getElementById("musicPlayer");
+  const playPauseBtn = document.getElementById("playPauseBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const prevBtn = document.getElementById("prevBtn");
 
-// Load first song
-player.src = songs[currentSong];
-
-// Play/Pause button control
-playPauseBtn.addEventListener("click", () => {
-  if (player.paused) {
-    player.play();
-    playPauseBtn.textContent = "⏸ Pause";
-  } else {
-    player.pause();
-    playPauseBtn.textContent = "▶ Play";
+  // Load first song
+  function loadSong(index) {
+    player.src = songs[index];
   }
-});
 
-// Next song
-nextBtn.addEventListener("click", () => {
-  currentSong = (currentSong + 1) % songs.length;
-  player.src = songs[currentSong];
-  player.play();
-  playPauseBtn.textContent = "⏸ Pause";
-});
+  // Update play/pause button label
+  function updatePlayPauseBtn() {
+    playPauseBtn.textContent = player.paused ? "▶ Play" : "⏸ Pause";
+  }
 
-// Previous song
-prevBtn.addEventListener("click", () => {
-  currentSong = (currentSong - 1 + songs.length) % songs.length;
-  player.src = songs[currentSong];
-  player.play();
-  playPauseBtn.textContent = "⏸ Pause";
-});
+  // Initial load
+  loadSong(currentSong);
 
-// Auto move to next when song ends
-player.addEventListener("ended", () => {
-  currentSong = (currentSong + 1) % songs.length;
-  player.src = songs[currentSong];
-  player.play();
+  // Play/Pause toggle
+  playPauseBtn.addEventListener("click", () => {
+    if (player.paused) {
+      player.play();
+    } else {
+      player.pause();
+    }
+    updatePlayPauseBtn();
+  });
+
+  // Next song
+  nextBtn.addEventListener("click", () => {
+    currentSong = (currentSong + 1) % songs.length;
+    loadSong(currentSong);
+    player.play();
+    updatePlayPauseBtn();
+  });
+
+  // Previous song
+  prevBtn.addEventListener("click", () => {
+    currentSong = (currentSong - 1 + songs.length) % songs.length;
+    loadSong(currentSong);
+    player.play();
+    updatePlayPauseBtn();
+  });
+
+  // Auto move to next when song ends
+  player.addEventListener("ended", () => {
+    currentSong = (currentSong + 1) % songs.length;
+    loadSong(currentSong);
+    player.play();
+    updatePlayPauseBtn();
+  });
 });

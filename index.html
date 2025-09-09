@@ -8,36 +8,31 @@
 </head>
 <body>
 
-    <section style="width: 100%; height: 10vh; 
+    
+    <nav class="navs">
+        <div class="nav">
+           <section style="width: 100%; height: 10vh; 
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
   background: #111;
   color: #fff;
   font-family: Arial, sans-serif;" class="say">
       <div id="clock">00:00:00</div>
   </section>
-    <nav class="navs">
-        <div class="nav">
-            <marquee behavior="alternate" direction="up" scrollamount="1">
-              <h1 style="color: white; padding-top: 5px; font-size: 1.3rem;" class="third">Sammy<span style="color: gold; font-size: 2.1rem;" class="highlight">Ventures</span></h1>
-            </marquee>
            <div class="menu-toggle" id="menu-toggle">&#9776</div>
             <ul id="nav-links">
                 
-                  <li><a href="#homes">Home</a></li>
+                  <li><a href="#home-page">Home</a></li>
               
                 <li><a href="#about">About</a></li>
 
                   <li><a href="#services">Services</a></li>
                
                 <li><a href="about.html#testimonials-section">Feedback</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
             </ul>
-            <div class="hold-butt">
-                <button class="butt" style="background-color: orange;">Login</button>
-                <button class="butt" style="background-color: rgb(67, 20, 20);">Sign Up</button>
-            </div>
+          
         </div>
     </nav>
     <section class="first-section" id="homes">
@@ -46,33 +41,35 @@
             <br>
             Quas libero accusamus necessitatibus?</p>
     </section>
-    <nav>
-        <ul>
-           
-                <li>Home</li>
-          
-            
-                <li>About</li>
-          
-           
-                <li>Services</li>
-           
-         
-                <li>Feedback</li>
-            
-        </ul>
-    </nav>
+    <main class="search-conts">
+       <marquee behavior="alternate" direction="up" scrollamount="1">
+              <h1 style="color: white; padding-top: 5px; font-size: 1.3rem;" class="third">Sammy<span style="color: gold; font-size: 2.5rem;" class="highlight">Ventures🛒</span></h1>
+            </marquee>
+            <div>
+              <form action="" style="display: flex;" class="forms">
+                <input type="text" style="height: 10vh; border-radius: 10px; padding: 0px 100px;" placeholder="🔍 Search products, brands and categories">
+                <button type="submit" style="background-color: orange; margin-top: 10px; height: 8vh;">SEARCH</button>
+              </form>
+            </div>
+              <div class="hold-butt">
+               <h1>Hi,</h1>
+               <h1>(Samuel)</h1>
+            </div>
+    </main>
   <style>
     .controls {
       display: flex;
       gap: 10px;
-      margin-top: 20px;
+      align-items: center;
+      justify-content: center;
+      background-color: orange;
+      padding: 20px;
     }
     button {
       padding: 10px 20px;
       font-size: 18px;
       border: none;
-      border-radius: 8px;
+      border-radius: 20px;
       background: maroon;
       color: white;
       cursor: pointer;
@@ -82,20 +79,30 @@
       background: darkred;
     }
   </style>
-</head>
-<body>
 
-  <!-- Hidden audio -->
-  <audio id="musicPlayer"></audio>
+<!-- Hidden audio -->
+<audio id="musicPlayer" src="songs/Kunmie-Ft-Simi-and-Mabel-Arike-(TrendyBeatz.com).mp3"></audio>
 
-  <!-- Custom controls -->
-  <div class="controls">
-    <button id="prevBtn">⏮ Previous</button>
-    <button id="playPauseBtn">▶ Play</button>
-    <button id="nextBtn">⏭ Next</button>
-  </div>
+<!-- Custom controls -->
+<div class="controls">
+  <button id="prevBtn">⏮ Previous</button>
+  <button id="playPauseBtn">▶ Play</button>
+  <button id="nextBtn">⏭ Next</button>
+</div>
 
 
+
+  <section class="home-page" id="home-page">
+    <img src="OIP (6).jpeg" alt="" class="think">
+    <div class="home-conts">
+        <h1 style="font-size: 3.2rem;">STYLE THAT SPEAKS </h1>
+        <p style="font-size: 1.3rem;">Discover trendy, affordable & timeless fashion for men and women. Shop with confidence and express your true self.</p>
+        <div class="butt-hold">
+            <button class="butt-its" style="background-color: orange;"><a href="#watches-section">Start Shopping</a></button>
+            <button class="butt-its" style="background-color: none; border: 2px solid white;"><a href="about.html#ourmission-conts">Learn More</a></button>
+        </div>
+    </div>
+  </section>
     <section class="about" id="about">
       <main class="main-conts">
 
@@ -125,9 +132,9 @@ Every item in our store is chosen for its superior quality and modern appeal. Wh
 
 
         <div class="hold">
-            <p class="hold-child">NewestArrivals</p>
-            <p class="hold-child">Prices from High To Low</p>
-            <p class="hold-child">Our High-End watches</p>
+            <p class="hold-child"><a href="">NewestArrivals</a></p>
+            <p class="hold-child"><a href="">Prices from High To Low</a></p>
+            <p class="hold-child"><a href="">Our High-End watches</a></p>
         </div>
 
        
@@ -135,7 +142,7 @@ Every item in our store is chosen for its superior quality and modern appeal. Wh
                 
 
                 <header class="topbar">
-  <h1 class="brand">Glow Fashion</h1>
+  <h1 class="brand" style="color: orange;">Glow Fashion</h1>
   <div class="cart-container">
     <div class="cart" id="cart-icon">
       🛒 <span id="cart-count">0</span>
@@ -149,7 +156,7 @@ Every item in our store is chosen for its superior quality and modern appeal. Wh
 </header>
 
 
-                    <div class="first-container">
+                    <div class="first-container" id="first-container">
                     
                             <div class="watch-hovercontainer">
                                 <img src="WAtch image/popular1.png" alt="" class="image1">
@@ -224,7 +231,7 @@ Every item in our store is chosen for its superior quality and modern appeal. Wh
       <article class="card" data-section="men" data-color="#1e90ff" aria-label="Open Men collection">
         <span>Men</span>
       </article>
-      <article class="card" data-section="women" data-color="#ff1493" aria-label="Open Women collection">
+      <article class="card" data-section="women" data-color="indigo" aria-label="Open Women collection">
         <span>Women</span>
       </article>
       <article class="card" data-section="children" data-color="#ffd700" aria-label="Open Children collection">
@@ -295,10 +302,10 @@ Every item in our store is chosen for its superior quality and modern appeal. Wh
     <div class="footer-col">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html">Shop</a></li>
+        <li><a href="index.html#home-page">Home</a></li>
+        <li><a href="#watches-section">Shop</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li><a href="index.html#services">Services</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="#">FAQs</a></li>
       </ul>
@@ -317,7 +324,7 @@ Every item in our store is chosen for its superior quality and modern appeal. Wh
     </div>
 
     <!-- Newsletter -->
-    <div class="footer-col">
+    <div class="footer-cols">
       <h3>Join Our Newsletter</h3>
       <p>Be the first to know about new arrivals, discounts & exclusive offers.</p>
       <form class="newsletter-form">

@@ -166,14 +166,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
-
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-});
 
 
 
@@ -236,9 +228,9 @@ slider.addEventListener("mouseleave", () => autoPlay = setInterval(nextSlide, 40
 // Wait until page loads
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".newsletter-form");
-
+  
   if (!form) return; // Safety check in case the form doesn't exist
-
+  
   form.addEventListener("submit", (e) => {
     e.preventDefault(); // Prevent actual form submission
 
@@ -254,3 +246,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
+
+
+
+
+
+// const toggle = document.getElementById("menu-toggle");
+// const navLinks = document.getElementById("nav-links");
+
+// toggle.addEventListener("click", () => {
+//   navLinks.classList.toggle("show");
+// });
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+  
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  });
